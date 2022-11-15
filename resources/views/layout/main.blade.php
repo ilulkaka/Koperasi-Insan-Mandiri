@@ -76,7 +76,7 @@
             <a href="{{ url('/') }}" class="brand-link">
                 <!--<img src="{{ asset('/dist/img/NPMI_Logo.png') }}" alt="NPMI Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">-->
-                <span class="brand-text font-weight-light" style="text-center">-- Koperasi Insan Mandiri --</span>
+                <span class="brand-text font-weight-light" style="text-center"><b> -- Koperasi Insan Mandiri --</b></span>
             </a>
 
             <!-- Sidebar -->
@@ -107,14 +107,24 @@
                                 </p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="{{ url('/') }}" class="nav-link {{ Request::is('/') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Transaksi
+
+                                </p>
+                            </a>
+                        </li>
                        
-                            
+                        
                        
                             <li class="nav-item has-treeview {{ Request::is('produksi/*') ? 'menu-open' : '' }}">
                                 <a href="#" class="nav-link {{ Request::is('produksi/*') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-copy"></i>
                                     <p>
-                                        PRODUKSI
+                                        SIMPANAN
                                         <i class="fas fa-angle-left right"></i>
                                         <!-- <span class="badge badge-info right">6</span> -->
                                     </p>
@@ -149,20 +159,6 @@
                                             <p>Report Lembur</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('produksi/menurequestjigu') }}"
-                                            class="nav-link {{ Request::is('produksi/menurequestjigu') ? 'active' : '' }}">
-                                            <i class="fas fa-drafting-compass nav-icon"></i>
-                                            <p>Request Jigu / Part</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('produksi/perbaikan') }}"
-                                            class="nav-link {{ Request::is('produksi/perbaikan') ? 'active' : '' }}">
-                                            <i class="fas fa-hammer nav-icon"></i>
-                                            <p>Request Perbaikan</p>
-                                        </a>
-                                    </li>
                                 </ul>
                             </li>
 
@@ -171,7 +167,7 @@
                                     class="nav-link {{ Request::is('maintenance/*') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-toolbox"></i>
                                     <p>
-                                        MAINTENANCE
+                                        PINJAMAN
                                         <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
@@ -191,14 +187,6 @@
                                             <p>Schedule</p>
                                         </a>
                                     </li>
-
-                                    <li class="nav-item">
-                                        <a href="{{ url('/maintenance/laporan') }}"
-                                            class="nav-link {{ Request::is('maintenance/laporan') ? 'active' : '' }}">
-                                            <i class="fas fa-chart-line nav-icon"></i>
-                                            <p>Laporan</p>
-                                        </a>
-                                    </li>
                                     <li class="nav-item">
                                         <a href="{{ url('/maintenance/mesin') }}"
                                             class="nav-link {{ Request::is('maintenance/mesin') ? 'active' : '' }}">
@@ -214,7 +202,7 @@
                                 <a href="#" class="nav-link {{ Request::is('technical/*') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-drafting-compass"></i>
                                     <p>
-                                        TECHNICAL
+                                        LAPORAN
                                         <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
@@ -255,7 +243,7 @@
                                 <a href="#" class="nav-link {{ Request::is('qa/*') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-ruler-combined"></i>
                                     <p>
-                                        QA
+                                        MASTER DATA
                                         <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
@@ -265,154 +253,6 @@
                                             class="nav-link {{ Request::is('qa/qamenu') ? 'active' : '' }}">
                                             <i class="fas fa-plus-square nav-icon"></i>
                                             <p>QA Menu</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item has-treeview {{ Request::is('hse/*') ? 'menu-open' : '' }}">
-                                <a href="#" class="nav-link {{ Request::is('hse/*') ? 'active' : '' }}">
-                                    <i class="nav-icon fab fa-envira"></i>
-                                    <p>
-                                        HSE
-                                        <i class="fas fa-angle-left right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ url('/hse/f_hhky') }}"
-                                            class="nav-link {{ Request::is('hse/f_hhky') ? 'active' : '' }}">
-                                            <i class="fas fa-h-square nav-icon"></i>
-                                            <p>HH / KY Entry</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('/hse/hklist') }}"
-                                            class="nav-link {{ Request::is('hse/hklist') ? 'active' : '' }}">
-                                            <i class="fas fa-list nav-icon"></i>
-                                            <p>HH / KY Inquery</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('hse/hhkygrafik') }}"
-                                            class="nav-link {{ Request::is('hse/hhkygrafik') ? 'active' : '' }}">
-                                            <i class="fas fa-chart-pie nav-icon"></i>
-                                            <p>HH / KY Grafik</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        
-                            <li class="nav-item has-treeview {{ Request::is('iso/*') ? 'menu-open' : '' }}">
-                                <a href="#" class="nav-link {{ Request::is('iso/*') ? 'active' : '' }}">
-                                    <i class="nav-icon fas fa-globe"></i>
-                                    <p>
-                                        ISO
-                                        <i class="fas fa-angle-left right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ url('/iso/ssentry') }}"
-                                            class="nav-link {{ Request::is('iso/ssentry') ? 'active' : '' }}">
-                                            <i class="fab fa-staylinked nav-icon"></i>
-                                            <p>SS Entry</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('iso/ssgrafik') }}"
-                                            class="nav-link {{ Request::is('iso/ssgrafik') ? 'active' : '' }}">
-                                            <i class="fas fa-chart-pie nav-icon"></i>
-                                            <p>SS Grafik</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('/iso/sspoint') }}"
-                                            class="nav-link {{ Request::is('iso/') ? 'active' : '' }}">
-                                            <i class="fas fa-list-ol nav-icon"></i>
-                                            <p>SS Point</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item has-treeview {{ Request::is('manager/*') ? 'menu-open' : '' }}">
-                                <a href="#" class="nav-link {{ Request::is('manager/*') ? 'active' : '' }}">
-                                    <i class="nav-icon fas fa-user-tie"></i>
-                                    <p>
-                                        Manager
-                                        <i class="fas fa-angle-left right"></i>
-                                    </p>
-                                </a>
-
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ url('/manager/targetlembur') }}"
-                                            class="nav-link {{ Request::is('manager/targetlembur') ? 'active' : '' }}">
-                                            <i class="fas fa-address-card nav-icon"></i>
-                                            <p>Target Lembur</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            
-
-                            <li class="nav-item has-treeview {{ Request::is('pga/*') ? 'menu-open' : '' }}">
-                                <a href="#" class="nav-link {{ Request::is('pga/*') ? 'active' : '' }}">
-                                    <i class="nav-icon fas fa-edit"></i>
-                                    <p>
-                                        PGA
-                                        <i class="fas fa-angle-left right"></i>
-                                        <span class="badge badge-danger right" id="notifskill"
-                                            name="notifskill"></span>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ url('/pga/employee') }}"
-                                            class="nav-link {{ Request::is('pga/employee') ? 'active' : '' }}">
-                                            <i class="fas fa-address-card nav-icon"></i>
-                                            <p>Employee</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ url('/pga/appraisal') }}"
-                                            class="nav-link {{ Request::is('pga/appraisal') ? 'active' : '' }}">
-                                            <i class="fas fa-check-circle nav-icon"></i>
-                                            <p>Appraisal</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ url('/pga/PGABonus') }}"
-                                            class="nav-link {{ Request::is('pga/PGABonus') ? 'active' : '' }}">
-                                            <i class="fas fa-money-bill-wave nav-icon"></i>
-                                            <p>Bonus</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ url('/pga/menupenilaian') }}"
-                                            class="nav-link {{ Request::is('pga/menupenilaian') ? 'active' : '' }}">
-                                            <i class="fas fa-pen-alt nav-icon"></i>
-                                            <p>Penilaian Entry</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ url('/pga/skillmatrik') }}"
-                                            class="nav-link {{ Request::is('pga/skillmatrik') ? 'active' : '' }}">
-                                            <i class="fa fa-sitemap nav-icon"></i>
-                                            <p>Skill Matrik</p>
-                                            <span class="badge badge-danger right" id="notifskill_1"
-                                                name="notifskill_1"></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -531,7 +371,7 @@
                     <div class="row mb-2">
 
                         <div class="col-sm-6">
-                            <h5>Date : {{ date('d M Y') }}</h5>
+                         
                         </div>
 
                     </div>
